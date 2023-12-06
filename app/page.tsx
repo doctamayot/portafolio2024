@@ -1,4 +1,5 @@
 import { Header, Hero } from "@/components";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,6 +8,15 @@ export default function Home() {
       <section id="hero" className="snap-center">
         <Hero />
       </section>
+      <div>
+        <div className="flex justify-center">
+          <img
+            src="https://dyvak8rtbn5om.cloudfront.net/wp-content/uploads/2022/01/website-under-construction-1.jpg"
+            alt="Const"
+            className="object-cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }
