@@ -1,11 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+import { Social } from "@/typings";
 
 type Props = {};
 
-export default function Header({}: Props) {
+export default function Header({ data }: any) {
+  const [socials, setSocials] = useState(data);
+  useEffect(() => {
+    setSocials(data);
+  }, []);
+
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -14,24 +22,15 @@ export default function Header({}: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
-          className="cursor-pointer"
-          url="https://www.linkedin.com/in/hugo-tamayo/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          className="cursor-pointer"
-          url="https://www.linkedin.com/in/hugo-tamayo/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          className="cursor-pointer"
-          url="https://www.linkedin.com/in/hugo-tamayo/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials?.map((social: Social, i: number) => (
+          <SocialIcon
+            key={i}
+            className="cursor-pointer"
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
@@ -45,9 +44,11 @@ export default function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Contáctame
-        </p>
+        <Link href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Contáctame
+          </p>
+        </Link>
       </motion.div>
     </header>
   );
