@@ -73,15 +73,15 @@ export default async function Home() {
       <section id="about" className="snap-center">
         <About data={pageInfo} />
       </section>
-      <section id="experience" className="snap-center">
+      {/* <section id="experience" className="snap-center">
         <Experience data={expInfo?.experiences} />
-      </section>
-      <section id="skills" className="snap-center">
+      </section> */}
+      {/* <section id="skills" className="snap-center">
         <Skills data={skillsInfo?.skills} />
-      </section>
-      <section id="projects" className="snap-center">
+      </section> */}
+      {/* <section id="projects" className="snap-center">
         <Projects data={projectsInfo?.projects} />
-      </section>
+      </section> */}
       <section id="contact" className="snap-center">
         <Contact />
       </section>
