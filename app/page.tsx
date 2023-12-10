@@ -33,40 +33,42 @@ type Props = {
 };
 
 async function getSocials() {
-  const resSocial = await fetch(`${BASEURL}/api/socials`, {
-    next: { revalidate: 60 },
-  });
+  const resSocial = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/socials`,
+    {
+      next: { revalidate: 60 },
+    }
+  );
   const socials = await resSocial.json();
 
-  const resPage = await fetch(`${BASEURL}/api/pageinfo`, {
-    next: { revalidate: 60 },
-  });
-  const pageInfo = await resPage.json();
+  // const resPage = await fetch(`${BASEURL}/api/pageinfo`, {
+  //   next: { revalidate: 60 },
+  // });
+  // const pageInfo = await resPage.json();
 
-  const resExp = await fetch(`${BASEURL}/api/experience`, {
-    next: { revalidate: 60 },
-  });
-  const expInfo = await resExp.json();
+  // const resExp = await fetch(`${BASEURL}/api/experience`, {
+  //   next: { revalidate: 60 },
+  // });
+  // const expInfo = await resExp.json();
 
-  const resSkills = await fetch(`${BASEURL}/api/skills`, {
-    next: { revalidate: 60 },
-  });
-  const skillsInfo = await resSkills.json();
+  // const resSkills = await fetch(`${BASEURL}/api/skills`, {
+  //   next: { revalidate: 60 },
+  // });
+  // const skillsInfo = await resSkills.json();
 
-  const resProjects = await fetch(`${BASEURL}/api/projects`, {
-    next: { revalidate: 60 },
-  });
-  const projectsInfo = await resProjects.json();
+  // const resProjects = await fetch(`${BASEURL}/api/projects`, {
+  //   next: { revalidate: 60 },
+  // });
+  // const projectsInfo = await resProjects.json();
 
-  return { socials, pageInfo, expInfo, skillsInfo, projectsInfo };
+  return { socials };
 }
 
 export default async function Home() {
-  const { socials, pageInfo, expInfo, skillsInfo, projectsInfo } =
-    await getSocials();
+  const { socials } = await getSocials();
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-      {/* <Header data={socials?.socials} /> */}
+      <Header data={socials?.socials} />
       {/* <section id="hero" className="snap-start">
         <Hero data={pageInfo} />
       </section> */}
