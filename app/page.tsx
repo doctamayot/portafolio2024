@@ -66,13 +66,13 @@ export default async function Home() {
       <section id="hero" className="snap-start">
         <Hero data={pageInfo} />
       </section>
-      <section id="about" className="snap-center md:mt-0 -mt-48">
+      <section id="about" className="snap-center md:mt-0 -mt-36">
         <About data={pageInfo} />
       </section>
       <section id="experience" className="snap-end">
         <Experience data={expInfo?.experiences} />
       </section>
-      <section id="skills" className="snap-center">
+      <section id="skills" className="snap-center mt-20">
         <Skills data={skillsInfo?.skills} />
       </section>
       <section id="projects" className="snap-center md:mt-0 -mt-48">
