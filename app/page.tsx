@@ -33,42 +33,37 @@ type Props = {
 };
 
 async function getSocials() {
-  const resSocial = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/socials`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
-  const socials = await resSocial.json();
-
+  // const resSocial = await fetch(
+  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/socials`,
+  //   {
+  //     next: { revalidate: 60 },
+  //   }
+  // );
+  // const socials = await resSocial.json();
   // const resPage = await fetch(`${BASEURL}/api/pageinfo`, {
   //   next: { revalidate: 60 },
   // });
   // const pageInfo = await resPage.json();
-
   // const resExp = await fetch(`${BASEURL}/api/experience`, {
   //   next: { revalidate: 60 },
   // });
   // const expInfo = await resExp.json();
-
   // const resSkills = await fetch(`${BASEURL}/api/skills`, {
   //   next: { revalidate: 60 },
   // });
   // const skillsInfo = await resSkills.json();
-
   // const resProjects = await fetch(`${BASEURL}/api/projects`, {
   //   next: { revalidate: 60 },
   // });
   // const projectsInfo = await resProjects.json();
-
-  return { socials };
+  //return { socials };
 }
 
 export default async function Home() {
-  const { socials } = await getSocials();
+  //const { socials } = await getSocials();
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-      <Header data={socials?.socials} />
+      {/* <Header data={socials?.socials} /> */}
       {/* <section id="hero" className="snap-start">
         <Hero data={pageInfo} />
       </section> */}
@@ -87,15 +82,6 @@ export default async function Home() {
       <section id="contact" className="snap-center">
         <Contact />
       </section>
-      {/* <Link href="#hero">
-        <footer className="sticky bottom-5 w-[50px] m-auto  ">
-          <div className="flex items-center justify-center">
-            <div className="flex items-center space-x-5 justify-center">
-              <ArrowUpCircleIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            </div>
-          </div>
-        </footer>
-      </Link> */}
     </div>
   );
 }
