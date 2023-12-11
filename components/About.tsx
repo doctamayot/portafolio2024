@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { urlFor } from "../sanity";
+import { PageInfo } from "@/typings";
 
-type Props = {};
-
-export default function About({ data }: any) {
+export default function About({ data }: { data: PageInfo }) {
   const [info, getInfo] = useState(data);
   useEffect(() => {
     getInfo(data);

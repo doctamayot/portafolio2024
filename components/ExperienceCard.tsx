@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { urlFor } from "../sanity";
+import { Experience } from "@/typings";
 
-type Props = {};
-
-export default function ExperienceCard({ exp }: any) {
+export default function ExperienceCard({ exp }: { exp: Experience }) {
   const [info, setInfo] = useState<any>([]);
   useEffect(() => {
     setInfo(exp);
@@ -42,7 +41,7 @@ export default function ExperienceCard({ exp }: any) {
           {info.dateStarted} - {info.dateEnded}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-lg mt-1">
-          {info.points?.map((point: any, i: number) => (
+          {info.points?.map((point: string, i: number) => (
             <li key={i}>{point}</li>
           ))}
         </ul>

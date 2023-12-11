@@ -2,11 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { urlFor } from "../sanity";
-import { Project } from "@/typings";
+import { Project, Technology } from "@/typings";
 
-type Props = {};
-
-export default function Projects({ data }: any) {
+export default function Projects({ data }: { data: Project }) {
   const [info, getInfo] = useState(data);
 
   useEffect(() => {
@@ -50,7 +48,7 @@ export default function Projects({ data }: any) {
                 {project.linkToBuild}
               </a>
               <div className="flex space-x-2 ">
-                {project.technologies?.map((tech: any, i: number) => (
+                {project.technologies?.map((tech: Technology, i: number) => (
                   <img
                     key={i}
                     className="h-8 w-8 rounded-full"

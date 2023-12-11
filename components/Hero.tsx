@@ -6,9 +6,7 @@ import Link from "next/link";
 import { urlFor } from "../sanity";
 import { PageInfo } from "@/typings";
 
-type Props = {};
-
-export default function Hero({ data }: any) {
+export default function Hero({ data }: { data: PageInfo }) {
   const [info, getInfo] = useState(data);
 
   const [text, count] = useTypewriter({

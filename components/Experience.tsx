@@ -2,18 +2,19 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ExperienceCard } from ".";
+import { Experience } from "@/typings";
 
 type Props = {};
 
-export default function Experience({ data }: any) {
-  const [info, getInfo] = useState<any>([]);
+export default function Experience({ data }: { data: Experience[] }) {
+  const [info, getInfo] = useState<Experience[]>([]);
 
   useEffect(() => {
     getInfo(data);
   }, [data]);
 
   let ordenado = info.sort(
-    (a: any, b: any) =>
+    (a, b) =>
       new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime()
   );
 
@@ -28,7 +29,7 @@ export default function Experience({ data }: any) {
         Experiencia
       </h3>
       <div className="w-full relative flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
-        {ordenado?.map((exp: any, i: any) => (
+        {ordenado?.map((exp: Experience, i: number) => (
           <ExperienceCard key={i} exp={exp} />
         ))}
       </div>
