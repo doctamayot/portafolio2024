@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import {
   About,
   Contact,
@@ -18,9 +17,6 @@ import {
   Skill,
   Social,
 } from "@/typings";
-import { BASEURL } from "@/config";
-
-//export const revalidate = 3600;
 
 type Props = {
   data: {
@@ -85,6 +81,15 @@ export default async function Home() {
       <section id="contact" className="snap-center">
         <Contact />
       </section>
+      <Link href="#hero">
+        <footer className="sticky bottom-5 w-[50px] m-auto  ">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center space-x-5 justify-center">
+              <ArrowUpCircleIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            </div>
+          </div>
+        </footer>
+      </Link>
     </div>
   );
 }
