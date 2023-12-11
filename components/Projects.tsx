@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { urlFor } from "../sanity";
 import { Project, Technology } from "@/typings";
 
-export default function Projects({ data }: { data: Project }) {
+export default function Projects({ data }: { data: Project[] }) {
   const [info, getInfo] = useState(data);
 
   useEffect(() => {
