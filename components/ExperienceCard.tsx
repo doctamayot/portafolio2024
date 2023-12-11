@@ -9,7 +9,7 @@ export default function ExperienceCard({ exp }: any) {
   const [info, setInfo] = useState<any>([]);
   useEffect(() => {
     setInfo(exp);
-  }, []);
+  }, [exp]);
 
   return (
     <article className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center w-[700px] justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden">

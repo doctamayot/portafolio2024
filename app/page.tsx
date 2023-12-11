@@ -33,13 +33,15 @@ type Props = {
 };
 
 async function getSocials() {
-  // const resSocial = await fetch(
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/socials`,
-  //   {
-  //     next: { revalidate: 60 },
-  //   }
-  // );
-  // const socials = await resSocial.json();
+  const baseUrl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://hugotamayo.com";
+  const resSocial = await fetch(`${baseUrl}/api/socials`, {
+    next: { revalidate: 60 },
+  });
+  const socials = await resSocial.json();
+
   // const resPage = await fetch(`${BASEURL}/api/pageinfo`, {
   //   next: { revalidate: 60 },
   // });
@@ -56,14 +58,14 @@ async function getSocials() {
   //   next: { revalidate: 60 },
   // });
   // const projectsInfo = await resProjects.json();
-  //return { socials };
+  return { socials };
 }
 
 export default async function Home() {
-  //const { socials } = await getSocials();
+  const { socials } = await getSocials();
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-      {/* <Header data={socials?.socials} /> */}
+      <Header data={socials?.socials} />
       {/* <section id="hero" className="snap-start">
         <Hero data={pageInfo} />
       </section> */}

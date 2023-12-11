@@ -12,7 +12,7 @@ export default function Header({ data }: any) {
   const [socials, setSocials] = useState(data);
   useEffect(() => {
     setSocials(data);
-  }, []);
+  }, [data]);
 
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">

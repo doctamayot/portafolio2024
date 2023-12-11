@@ -9,7 +9,7 @@ export default function About({ data }: any) {
   const [info, getInfo] = useState(data);
   useEffect(() => {
     getInfo(data);
-  }, []);
+  }, [data]);
   return (
     <motion.div
       initial={{ opacity: 0 }}

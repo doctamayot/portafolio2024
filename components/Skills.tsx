@@ -9,7 +9,7 @@ export default function Skills({ data }: any) {
   const [info, getInfo] = useState<any>([]);
   useEffect(() => {
     getInfo(data);
-  }, []);
+  }, [data]);
   return (
     <motion.div
       initial={{ opacity: 0 }}

@@ -10,7 +10,7 @@ export default function Experience({ data }: any) {
 
   useEffect(() => {
     getInfo(data);
-  }, []);
+  }, [data]);
 
   let ordenado = info.sort(
     (a: any, b: any) =>
