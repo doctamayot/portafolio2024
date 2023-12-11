@@ -12,7 +12,7 @@ export default function ExperienceCard({ exp }: any) {
   }, [exp]);
 
   return (
-    <article className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center w-[700px] justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 md:items-center w-[350px] md:w-[700px] md:justify-center md:snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden">
       {info?.companyImage && (
         <motion.img
           initial={{ y: -100, opacity: 0 }}
@@ -32,7 +32,7 @@ export default function ExperienceCard({ exp }: any) {
           {info.technologies?.map((tech: any, i: number) => (
             <img
               key={i}
-              className="h-12 w-12 rounded-full"
+              className="md:h-12 md:w-12 w-5 rounded-full"
               src={urlFor(tech?.image).url()}
               alt="hugo tamayo"
             />

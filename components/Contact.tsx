@@ -43,26 +43,25 @@ export default function Contact({}: Props) {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 md:w-fit w-full mx-auto "
         >
-          <div className="flex space-x-2">
-            <input
-              {...register("name")}
-              type="text"
-              name="name"
-              id=""
-              placeholder="Name"
-              className="contactInput"
-            />
-            <input
-              {...register("email")}
-              type="text"
-              name="email"
-              id=""
-              placeholder="Email"
-              className="contactInput"
-            />
-          </div>
+          <input
+            {...register("name")}
+            type="text"
+            name="name"
+            id=""
+            placeholder="Name"
+            className="contactInput"
+          />
+          <input
+            {...register("email")}
+            type="text"
+            name="email"
+            id=""
+            placeholder="Email"
+            className="contactInput"
+          />
+
           <input
             {...register("tema")}
             type="text"

@@ -14,7 +14,7 @@ export default function Projects({ data }: any) {
   }, [data]);
 
   return (
-    <div className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center">
+    <div className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto md:items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Proyectos
       </h3>
@@ -22,7 +22,7 @@ export default function Projects({ data }: any) {
         {info.map((project: Project, i: number) => (
           <div
             key={i}
-            className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center w-[700px] justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden"
+            className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center md:w-[700px] w-[350px]  justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden"
           >
             <motion.img
               initial={{
@@ -35,7 +35,7 @@ export default function Projects({ data }: any) {
               alt="Hugo Tamayo"
             />
             <div className="space-y-2 px-0 md:px-4 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="md:text-4xl text-2xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]">
                   Proyecto {i + 1} de {info.length}:
                 </span>{" "}
@@ -60,7 +60,9 @@ export default function Projects({ data }: any) {
                 ))}
               </div>
             </div>
-            <p className="font-bold text-xl mt-4">{project.summary}</p>
+            <p className="font-bold md:text-xl text-base mt-4">
+              {project.summary}
+            </p>
           </div>
         ))}
       </div>

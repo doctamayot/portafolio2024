@@ -15,13 +15,13 @@ export default function Skills({ data }: any) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}
-      className="flex flex-col relative text-center md:text-left  max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-7 mx-auto items-center"
+      className="flex flex-col relative text-center md:text-left  max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-7 mx-auto items-center -mt-48 md:mt-0"
     >
-      <h3 className="relative uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-48  md:top-10 uppercase tracking-[20px] text-gray-500 text-2xl">
         Skills
       </h3>
-      <h3 className="relative uppercase tracking-[3px] text-gray-500 text-sm">
-        Hover over a skill for currency proeficiency
+      <h3 className="relative mb-9 uppercase tracking-[3px] text-gray-500 text-sm">
+        Hover para ver nivel de conocimiento
       </h3>
       <div className="relative">
         <div className="grid grid-cols-4 gap-5">
