@@ -17,7 +17,7 @@ export default function About({ data }: any) {
       transition={{ duration: 1.5 }}
       className=" flex flex-col relative text-center max-w-7xl md:px-10 px-4 justify-evenly mx-auto items-center md:text-left md:flex-row h-screen"
     >
-      <h3 className="absolute md:top-24 top-10 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute md:top-24 top-5 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
       <motion.img
@@ -33,7 +33,7 @@ export default function About({ data }: any) {
       />
 
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold"> Background</h4>
+        <h4 className="text-4xl font-semibold md:mt-0 mt-12"> Background</h4>
         <p className="text-base">{info.background}</p>
       </div>
     </motion.div>

@@ -12,7 +12,7 @@ export default function ExperienceCard({ exp }: any) {
   }, [exp]);
 
   return (
-    <article className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 md:items-center w-[350px] md:w-[700px] md:justify-center md:snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 md:items-center w-[400px] md:w-[700px] md:justify-center md:snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden">
       {info?.companyImage && (
         <motion.img
           initial={{ y: -100, opacity: 0 }}

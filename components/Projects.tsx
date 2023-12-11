@@ -22,11 +22,11 @@ export default function Projects({ data }: any) {
         {info.map((project: Project, i: number) => (
           <div
             key={i}
-            className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center md:w-[700px] w-[350px]  justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden"
+            className="flex flex-col rounded-l space-y-7 mt-24 flex-shrink-0 items-center md:w-[700px] w-[400px]  justify-center snap-center p-10 bg-[#292929] hover:opacity-100  transition-opacity duration-200 overflow-hidden"
           >
             <motion.img
               initial={{
-                y: -300,
+                y: -100,
               }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
