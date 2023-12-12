@@ -11,49 +11,20 @@ import {
 import { ArrowUpCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import {
-  Experience as ExperienceType,
-  PageInfo,
-  Project,
-  Skill,
-  Social,
-} from "@/typings";
-
-type Props = {
-  data: {
-    socials: Social[];
-    pageInfo: PageInfo;
-    experiences: ExperienceType[];
-    skills: Skill[];
-    projects: Project[];
-  };
-};
+  fetchExperience,
+  fetchPageInfo,
+  fetchSocials,
+  fetchSkills,
+  fetchProjects,
+} from "@/services";
 
 async function getSocials() {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://hugotamayo.com";
-  const resSocial = await fetch(`${baseUrl}/api/socials`, {
-    next: { revalidate: 60 },
-  });
-  const socials = await resSocial.json();
+  const pageInfo = await fetchPageInfo();
+  const expInfo = await fetchExperience();
+  const socials = await fetchSocials();
+  const skillsInfo = await fetchSkills();
+  const projectsInfo = await fetchProjects();
 
-  const resPage = await fetch(`${baseUrl}/api/pageinfo`, {
-    next: { revalidate: 60 },
-  });
-  const pageInfo = await resPage.json();
-  const resExp = await fetch(`${baseUrl}/api/experience`, {
-    next: { revalidate: 60 },
-  });
-  const expInfo = await resExp.json();
-  const resSkills = await fetch(`${baseUrl}/api/skills`, {
-    next: { revalidate: 60 },
-  });
-  const skillsInfo = await resSkills.json();
-  const resProjects = await fetch(`${baseUrl}/api/projects`, {
-    next: { revalidate: 60 },
-  });
-  const projectsInfo = await resProjects.json();
   return { socials, pageInfo, expInfo, skillsInfo, projectsInfo };
 }
 
