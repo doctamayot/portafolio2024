@@ -32,7 +32,7 @@ export default function About({ data }: { data: PageInfo }) {
       />
 
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold md:mt-0 mt-12"> Background</h4>
+        <h4 className="text-4xl font-semibold md:mt-0 mt-12"> Backgroundaaa</h4>
         <p className="text-base">{info.background}</p>
       </div>
     </motion.div>
