@@ -1,12 +1,11 @@
+
+
 {
   "rewrites": [
     {
-      "source": "/pollitamayo",
-      "destination": "https://pollitamayo.vercel.app"
-    },
-    {
       "source": "/pollitamayo/:match*",
-      "destination": "https://https://pollitamayo.vercel.app/:match*"
+      "destination": "https://pollitamayo.vercel.app/:match*"
     }
   ]
 }
+
